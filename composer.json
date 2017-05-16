@@ -1,0 +1,23 @@
+{
+    "name": "suver/yii2-integrator",
+    "type": "yii2-extension",
+    "description": "integrator for Yii2",
+    "keywords": ["yii2", "extension", "integrator"],
+    "homepage": "https://github.com/suver/yii2-integrator",
+    "license": "BSD 3-Clause",
+    "authors": [
+        {
+            "name": "Suver",
+            "email": "suver@inbox.ru",
+            "homepage": "http://farpse.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "*",
+    },
+    "autoload": {
+        "psr-4": {
+            "suver\\integrator\\": ""
+        }
+    }
+}
