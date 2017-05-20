@@ -104,6 +104,10 @@ trait TabsTrait
 		$selectTab = $tabsStorageIntegrator->get('tabs', $tab);
 		$activeTab = $tabsStorageIntegrator->get('activeTab');
 
+		if (!$selectTab || !isset ($selectTab['window'])) {
+			return null;
+		}
+
 		$moduleId = Yii::$app->controller->module->id;
 		$controllerId = Yii::$app->controller->id;
 		$actionId = Yii::$app->controller->action->id;
