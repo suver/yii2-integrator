@@ -18,6 +18,9 @@ class StorageIntegrator {
 		if (!isset($this->memStorage[$cluster])) {
 			$this->memStorage[$cluster] = [];
 		}
+		if (!isset($this->memStorage[$cluster][$storage])) {
+			$this->memStorage[$cluster][$storage] = [];
+		}
 		$this->memStorage[$cluster][$storage][] = $data;
 	}
 
@@ -31,7 +34,7 @@ class StorageIntegrator {
 		if (!isset($this->memStorage[$cluster])) {
 			return false;
 		}
-		return $this->memStorage[$cluster][$storage] ? true : false;
+		return isset($this->memStorage[$cluster][$storage]) ? true : false;
 	}
 
 	public function get($cluster, $storage = null)
@@ -39,6 +42,6 @@ class StorageIntegrator {
 		if (!isset($this->memStorage[$cluster])) {
 			return null;
 		}
-		return $this->memStorage[$cluster][$storage] ?: null;
+		return isset($this->memStorage[$cluster][$storage]) ? $this->memStorage[$cluster][$storage] : null;
 	}
 }
