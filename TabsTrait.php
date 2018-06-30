@@ -17,7 +17,7 @@ trait TabsTrait
 
 
 
-	public function addTab($params)
+	public static function addTab($params)
 	{
 		if (!\Yii::$container->hasSingleton('TabsStorageIntegrator')) {
 			\Yii::$container->setSingleton('TabsStorageIntegrator', new StorageIntegrator());
@@ -60,7 +60,7 @@ trait TabsTrait
 		$tabsStorageIntegrator->set('tabs', $params, $params['tab']);
 	}
 
-	public function tabs($window)
+	public static function tabs($window)
 	{
 		if (!\Yii::$container->hasSingleton('TabsStorageIntegrator')) {
 			\Yii::$container->setSingleton('TabsStorageIntegrator', new StorageIntegrator());
@@ -92,7 +92,7 @@ trait TabsTrait
 		}
 	}
 
-	public function context($tab=null, $event=null)
+	public static function context($tab=null, $event=null)
 	{
 		if (!\Yii::$container->hasSingleton('TabsStorageIntegrator')) {
 			\Yii::$container->setSingleton('TabsStorageIntegrator', new StorageIntegrator());
@@ -139,7 +139,7 @@ trait TabsTrait
 		}
 	}
 
-	public function tabContext()
+	public static function tabContext()
 	{
 		if (!\Yii::$container->hasSingleton('TabsStorageIntegrator')) {
 			\Yii::$container->setSingleton('TabsStorageIntegrator', new StorageIntegrator());
